@@ -5,8 +5,7 @@ const unsigned long  gen = 0x5B9;
 const unsigned long prem = 0x31b  ; // x^9 + x^8 + x^4 + x^3 + x + 1
 const unsigned int  gdeg = 10;//=x^325 mod gen
 const unsigned int  mlen = 26;
-/* d'après https://github.com/bastibl/gr-rds */
- unsigned int calc_syndrome(unsigned long message)
+unsigned int calc_syndrome(unsigned long message)
 {
  unsigned long reg = 0;
  unsigned int i;
@@ -47,7 +46,7 @@ int main() {
   cout << "Entrer le message, exemple 9726E0" << endl;
   cin >> hex >> entree  ; 
   sortie=corrige(entree); 
-  cout << "le message décodé  est "<< hex << sortie << endl;;
+  cout << "le message dÃ©codÃ©  est "<< hex << sortie << endl;;
   bitset<26> binaire(sortie);
   cout << binaire << endl;
   return 0;
