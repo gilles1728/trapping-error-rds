@@ -5,7 +5,7 @@ const unsigned long  gen = 0x5B9;
 const unsigned int  gdeg = 10;
 const unsigned int  mlen = 26;
 bool echec = 1  ;
-/* d'après http://www.the-art-of-ecc.com/3\_Cyclic\_BCH/RBDS.c */
+/* d'aprÃ¨s http://www.the-art-of-ecc.com/3\_Cyclic\_BCH/RBDS.c */
 unsigned long int divise(unsigned long mot, unsigned long ini) {
  unsigned long reg = 0;
  unsigned int i;
@@ -27,7 +27,7 @@ unsigned long int corrige(unsigned long message) {
     if ( (reg & trap) == 0 ) {
       echec  = 0 ; break ;
     } 
-    reg=(reg << 1); cout << dec << decale << endl ;
+    reg=(reg << 1); 
   }
   reg= (reg << decale );
   reg  = message ^ reg  ;
@@ -38,9 +38,9 @@ int main(void) {
   cout << "Entrer le message, exemple 9726E0" << endl;
   cin >> hex >> entree  ; 
   sortie=corrige(entree);
-  if (echec) cout << "pas de piégeage" << endl;
+  if (echec) cout << "pas de piÃ©geage" << endl;
   else {
-  cout << "le message estimé  est " << hex << sortie << endl;;
+  cout << "le message estimÃ©  est " << hex << sortie << endl;;
   bitset<26> binaire(sortie);
   cout << binaire << endl;
   }
